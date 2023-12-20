@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+}
+
+body{
+    font-family: sans-serif;
+    
+   
+}
+
+h1{
+    margin-bottom: 15px;
+    width: 75vh;
+}
+
+.container {
+    overflow: hidden; /* Para limpar os floats */
+    margin: 0 50px;
+    padding: 20px;
+    
+}
+
+.container img{
+    height: 800px;
+    width: 100%;
+}
+
+.map_container {
+    width: 30%; /* Defina a largura desejada */
+    float: right; /* Alinha à direita */
+    border: 5px solid #000;
+}
+
+.form {
+    width: 40%; /* Defina a largura desejada */
+    float: left; /* Alinha à esquerda */
+}
+
+.form1{
+    margin-top: 30px;
+}
+
+.form2{
+    margin-top: 80px;
+}

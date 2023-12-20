@@ -1,0 +1,2 @@
+App será o nome da classe
+app será a pasta q vai abrigar a classe

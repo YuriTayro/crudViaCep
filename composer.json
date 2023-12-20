@@ -1,0 +1,9 @@
+{
+    "name":"crudViaCep",
+    "autoload": {
+        "psr-4": {
+            "App\\":"app/"
+        } 
+    }
+}
+
