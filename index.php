@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cep'])) {
     // Processar dados do formulário, se necessário
-} else if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['cep'])) {
+} elseif ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['cep'])) {
     $cep = $_GET['cep'];
     $cep = preg_replace('/\D/', '', $cep); // Remove caracteres não numéricos
 

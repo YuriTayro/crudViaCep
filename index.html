@@ -21,7 +21,7 @@
 
         <div class="form">
 
-            <form action="index.php" method="POST" onsubmit="return handleFormSubmit()">
+            <form action="" method="POST" onsubmit="return handleFormSubmit()">
 
 
                 <h1>Formulário de Endereço</h1>
@@ -29,14 +29,14 @@
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Nome</label>
-                    <input type="text" class="form-control" aria-describedby="nome1" name="nom">
+                    <input type="text" class="form-control" aria-describedby="nome1" name="nome">
                     <div id="emailHelp" class="form-text"></div>
                 </div>
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">E-Mail</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        required>
+                        required name="email">
                     <div id="emailHelp" class="form-text">Nós não iremos compartilhar os seus dados com ninguém.
                     </div>
                 </div>
@@ -50,7 +50,7 @@
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Número</label>
-                    <input type="number" class="form-control" id="number" aria-describedby="emailHelp">
+                    <input type="number" class="form-control" id="number" aria-describedby="emailHelp" name="numero">
                     <div id="emailHelp" class="form-text"></div>
                 </div>
 
@@ -66,6 +66,11 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="city" name="cidade">
+                </div>
+
+                <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">UF</label>
                     <input type="text" class="form-control" id="uf" aria-describedby="emailHelp" name="uf">
                     <div id="emailHelp" class="form-text"></div>
@@ -73,14 +78,14 @@
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">País</label>
-                    <input type="text" class="form-control" id="pais" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" id="pais" aria-describedby="emailHelp" name="pais">
                     <div id="emailHelp" class="form-text">Nós não iremos compartilhar seu endereço com ninguém.
                     </div>
                 </div>
 
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Concordo(a) com os termos</label>
+                    <label class="form-check-label" for="exampleCheck1">Concordo com os termos</label>
                 </div>
 
 
@@ -88,37 +93,7 @@
             </form>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const cepInput = document.getElementById('exampleInputPassword1');
-
-            cepInput.addEventListener('input', function () {
-                const cep = cepInput.value.replace(/\D/g, '');
-
-                if (cep.length === 8) {
-                    const url = `index.php?cep=${cep}`;
-
-                    fetch(url)
-                        .then(response => response.json())
-                        .then(data => {
-                            if (!data.error) {
-                                // Preencher os campos do formulário com os dados da API
-                                document.getElementById('endereco').value = data.logradouro;
-                                document.getElementById('bairro').value = data.bairro;
-                                document.getElementById('uf').value = data.uf;
-                                document.getElementById('pais').value = 'Brasil'; // Você pode ajustar conforme necessário
-                            } else {
-                                alert(data.error);
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Erro na requisição:', error);
-                        });
-                }
-            });
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
