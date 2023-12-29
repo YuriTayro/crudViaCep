@@ -1,9 +1,9 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cep'])) {
-    // Processar dados do formulário, se necessário
-} elseif ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['cep'])) {
+    
+} else if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['cep'])) {
     $cep = $_GET['cep'];
-    $cep = preg_replace('/\D/', '', $cep); // Remove caracteres não numéricos
+    $cep = preg_replace('/\D/', '', $cep); // Essa função remove caracteres não numéricos
 
     if (strlen($cep) == 8) {
         $url = "https://viacep.com.br/ws/{$cep}/json/";
